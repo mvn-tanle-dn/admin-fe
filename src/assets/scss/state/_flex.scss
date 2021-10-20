@@ -1,0 +1,4 @@
+.flex-between {
+    @extend %flex;
+    justify-content: map-get($display-flex, between);
+}

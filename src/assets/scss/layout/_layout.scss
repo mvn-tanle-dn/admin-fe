@@ -1,0 +1,41 @@
+#components-layout-demo-custom-trigger .trigger {
+    padding: 0 24px;
+    font-size: 18px;
+    line-height: 64px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#components-layout-demo-custom-trigger .trigger:hover {
+    color: #1890ff;
+}
+
+#components-layout-demo-custom-trigger .logo {
+    height: 32px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.site-layout .site-layout-background {
+    background: #fff;
+}
+.layout-default {
+    @include pxRem(font-size, 20);
+    .header-menu {
+        @include pxRem(line-height, 64);
+    }
+    .menu-title {
+        @include pxRem(font-size, 25);
+    }
+    .layout-content {
+        @include pxRem(margin, 24 26);
+        @include pxRem(padding, 24);
+        @include pxRem(min-height, 480);
+    }
+    .style-icon {
+        img {
+            @include pxRem(width, 18);
+            height: auto;
+        }
+    }
+}
