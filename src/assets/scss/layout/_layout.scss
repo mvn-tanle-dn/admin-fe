@@ -35,10 +35,10 @@
         @include pxRem(padding, 24);
         @include pxRem(min-height, 480);
     }
-    .style-icon {
+    .style-icon-img {
         img {
             @include pxRem(width, 18);
-            height: auto;
+            @include pxRem(height, 18);
         }
     }
 }

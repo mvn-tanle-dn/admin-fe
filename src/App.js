@@ -4,7 +4,8 @@ import { ProviderAuth } from "./context/auth";
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import Login from "./pages/Auth/Login";
-import LayoutDefault from "./pages/features/LayoutDefault";
+import { LayoutDefault } from "./components/layouts";
+
 
 function App() {
   return (
