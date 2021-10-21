@@ -7,5 +7,5 @@ export {
     PageAccountsManager,
     PageTeachersManager,
     PageStudentsManager,
-    PageExamsManager
+    PageExamsManager   
 }

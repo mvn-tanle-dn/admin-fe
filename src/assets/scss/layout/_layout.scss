@@ -21,6 +21,9 @@
 }
 .layout-default {
     @include pxRem(font-size, 20);
+    width: 100%;
+    height: 100%;
+    position: fixed;
     .header-menu {
         @include pxRem(line-height, 64);
     }

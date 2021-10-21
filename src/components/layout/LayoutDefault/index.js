@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
 import { Layout, Menu } from 'antd';
-import { UsergroupAddOutlined } from '@ant-design/icons';
-import { GiTeacher } from "react-icons/gi";
-import { FaBook } from "react-icons/fa";
 import LayoutContent from '../LayoutContent';
 import { NavLink } from 'react-router-dom';
 import LayoutHeader from '../LayoutHeader';
