@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import "antd/dist/antd.css";
 import { Form, Input, Button, Space, message } from "antd";
-import avatarAdmin from "../../assets/img/admin.png";
-import { adminContext } from "../../context/auth";
+import avatarAdmin from "../../../assets/img/admin.png";
+import { adminContext } from "../../../context/auth";
 
 export default function Login() {
   const { setAdminInfo } = useContext(adminContext);

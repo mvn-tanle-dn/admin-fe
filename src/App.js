@@ -3,8 +3,8 @@ import 'antd/dist/antd.css';
 import { ProviderAuth } from "./context/auth";
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import Login from "./pages/Login";
-import { LayoutDefault } from "./components/layout";
+import Login from "./pages/Auth/Login";
+import LayoutDefault from "./pages/features/LayoutDefault";
 
 function App() {
   return (

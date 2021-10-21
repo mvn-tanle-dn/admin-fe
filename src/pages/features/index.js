@@ -1,11 +1,5 @@
-import PageAccountsManager from "./PageAccountsManager";
-import PageTeachersManager from "./PageTeachersManager";
-import PageStudentsManager from "./PageStudentsManager";
-import PageExamsManager from "./PageExamsManager";
+import LayoutDefault from "./LayoutDefault";
 
 export {
-    PageAccountsManager,
-    PageTeachersManager,
-    PageStudentsManager,
-    PageExamsManager   
+    LayoutDefault
 }
