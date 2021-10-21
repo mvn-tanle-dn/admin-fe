@@ -1,7 +1,7 @@
 import React from 'react'
 import { Layout } from 'antd';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import { PageAccountsManager, PageStudentsManager, PageTeachersManager, PageExamsManager } from '../../../pages/features';
+import { PageAccountsManager, PageStudentsManager, PageTeachersManager, PageExamsManager } from '../../../../pages/features';
 const { Content } = Layout;
 
 export default function LayoutContent() {
