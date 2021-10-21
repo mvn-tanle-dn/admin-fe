@@ -18,7 +18,7 @@ export default function LayoutContent() {
                 <Route exact path='/exams' component={PageExamsManager}/>
                 <Route exact path='/charts' component={PageCharts}/>
             </Switch>
-            <Redirect to='/accounts'/>
+            <Redirect to='/home'/>
         </Content>
     )
 }
