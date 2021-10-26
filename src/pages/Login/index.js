@@ -1,29 +1,26 @@
 import React, { useContext } from "react";
 import "antd/dist/antd.css";
 import { Form, Input, Button, Space, message } from "antd";
-import avatarAdmin from "../../../assets/img/admin.png";
-import { adminContext } from "../../../context/auth";
+import { adminContext } from "../../context/auth";
+import { useHistory } from "react-router";
 
 export default function Login() {
-  const { setAdminInfo } = useContext(adminContext);
+  const { adminInfo, setAdminInfo } = useContext(adminContext);
 
-  const admin = {
-    username: "admin@admin.com",
-    password: "Admin@123",
-    avatar: avatarAdmin,
-  };
+  const history = useHistory();
 
   const onLogin = (values) => {
     if (
-      values.username.trim() === admin.username &&
-      values.password === admin.password
+      values.username.trim() === adminInfo.username &&
+      values.password === adminInfo.password
     ) {
       setAdminInfo({
-        username: values.username,
-        password: values.password,
-        name: "Admin",
+        ...adminInfo,
+        isLoggin: true,
       });
+      localStorage.setItem("isLoggin", true);
       message.success("Đăng nhập thành công !!!");
+      history.replace("/admin");
     } else {
       message.error("Đăng nhập thất bại");
     }
@@ -31,7 +28,11 @@ export default function Login() {
 
   return (
     <Space
-      style={{ width: "100%", height: "100vh", backgroundColor: "#2193b0" }}
+      style={{
+        width: "100%",
+        height: "100vh",
+        backgroundColor: "#2193b0",
+      }}
       direction="vertical"
       align="center"
     >
@@ -70,15 +71,21 @@ export default function Login() {
               message: "Vui lòng nhập tên tài khoản!",
             },
           ]}
-          style={{ width: 400, paddingTop: 33, paddingRight: 46 }}
+          style={{
+            width: 400,
+            paddingTop: 33,
+            paddingRight: 46,
+          }}
         >
           <Input />
         </Form.Item>
-
         <Form.Item
           label="Mật Khẩu"
           name="password"
-          style={{ marginTop: 10, paddingRight: 46 }}
+          style={{
+            marginTop: 10,
+            paddingRight: 46,
+          }}
           rules={[
             {
               required: true,
@@ -88,7 +95,6 @@ export default function Login() {
         >
           <Input.Password />
         </Form.Item>
-
         <Form.Item
           wrapperCol={{
             offset: 8,
@@ -104,10 +110,10 @@ export default function Login() {
               borderRadius: 5,
             }}
           >
-            Đăng Nhập
-          </Button>
-        </Form.Item>
-      </Form>
+            Đăng Nhập{" "}
+          </Button>{" "}
+        </Form.Item>{" "}
+      </Form>{" "}
     </Space>
   );
 }

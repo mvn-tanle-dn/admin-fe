@@ -1,14 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.scss";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { Router } from "react-router-dom";
+import { createBrowserHistory } from "history";
+import { ProviderAuth } from "./context/auth";
+
+const history = createBrowserHistory();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <ProviderAuth>
+    <Router history={history}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Router>
+  </ProviderAuth>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

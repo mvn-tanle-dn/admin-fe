@@ -1,3 +1,4 @@
-import {
-  LayoutDefault
-} from "../../components/layouts/index";
+import PageDashboard from "./Dashboard";
+import PageCharts from "./Charts";
+
+export { PageDashboard, PageCharts };
