@@ -15,7 +15,7 @@ import { LayoutHeader } from "./components/layouts/LayoutDefault";
 import { LayoutSider } from "./components/layouts/LayoutDefault";
 import { PageDashboard, PageCharts } from "./pages/Home";
 import PageNotFound from "./pages/PageNotFound";
-import MyProfile from "./pages/MyProFile";
+import AdminProfile from "./pages/AdminProfile";
 
 function App() {
   const [collapsed, setCollapsed] = useState(false);
@@ -39,7 +39,7 @@ function App() {
                 <Route path="/admin/students" component={PageStudentsManager} />
                 <Route path="/admin/exams" component={PageExamsManager} />
                 <Route path="/admin/charts" component={PageCharts} />
-                <Route path="/admin/my-profile" component={MyProfile} />
+                <Route path="/admin/my-profile" component={AdminProfile} />
                 <Route path="/admin/*" component={PageNotFound} />
               </Switch>
             </Content>
