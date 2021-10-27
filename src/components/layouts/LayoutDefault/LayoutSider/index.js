@@ -14,7 +14,8 @@ export default function LayoutSider(props) {
     <Sider trigger={null} collapsible collapsed={props.collapsed}>
       <div className="logo" />
       <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
-        <Menu.Item className="menu-title">Tests Manager</Menu.Item>
+        <Menu.Item className="menu-title">Admin Page
+        </Menu.Item>
         <Menu.Item key="1">
           <span className="style-icon-img pr-10">
             <img src={homeIcon} alt="Home Icon" />
