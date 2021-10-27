@@ -4,10 +4,13 @@ import { adminContext } from "../../context/auth";
 
 export default function AdminProfile() {
   const { adminInfo, setAdminInfo } = useContext(adminContext);
+  const [form] = Form.useForm();
   const onFinish = (values) => {
     if (values.currentPassword === adminInfo.password) {
       if (values.newPassword === values.confirmPassword) {
+        setAdminInfo({ ...adminInfo, password: values.newPassword });
         message.success("Đổi mật khẩu thành công!");
+        form.resetFields();
       } else {
         message.error("Mật khẩu xác nhận không trùng khớp!");
       }
@@ -23,6 +26,7 @@ export default function AdminProfile() {
     <Card title="Thông tin tài khoản" style={{ width: 1000 }}>
       <p>Role: Admin</p>
       <Form
+        form={form}
         name="basic"
         labelCol={{
           span: 4,

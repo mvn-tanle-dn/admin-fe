@@ -10,8 +10,9 @@ export default function Login() {
   const history = useHistory();
 
   const onLogin = (values) => {
+    console.log(adminInfo.password, adminInfo.username);
     if (
-      values.username.trim() === adminInfo.username &&
+      values.username.toLowerCase().trim() === adminInfo.username &&
       values.password === adminInfo.password
     ) {
       setAdminInfo({
