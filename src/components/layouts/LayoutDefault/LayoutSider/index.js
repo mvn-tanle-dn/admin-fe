@@ -13,44 +13,63 @@ export default function LayoutSider(props) {
   return (
     <Sider trigger={null} collapsible collapsed={props.collapsed}>
       <div className="logo" />
+      <h3 className="menu-title mt-10">Admin Page
+      </h3>
       <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
-        <Menu.Item className="menu-title">Admin Page
+        <Menu.Item
+          key="1"
+          className="style-icon-img"
+          icon={<img src={homeIcon} alt="Home Icon" />}
+        >
+          <NavLink to="/admin">
+            Dashboard
+          </NavLink>
         </Menu.Item>
-        <Menu.Item key="1">
-          <span className="style-icon-img pr-10">
-            <img src={homeIcon} alt="Home Icon" />
-          </span>
-          <NavLink to="/admin">Dashboard</NavLink>
+        <Menu.Item
+          key="2"
+          className="style-icon-img"
+          icon={<img src={accountIcon} alt="Account Icon" />}
+        >
+
+          <NavLink to="/admin/accounts">
+            Account
+          </NavLink>
         </Menu.Item>
-        <Menu.Item key="2">
-          <span className="style-icon-img pr-10">
-            <img src={accountIcon} alt="Account Icon" />
-          </span>
-          <NavLink to="/admin/accounts">Account</NavLink>
+        <Menu.Item
+          key="3"
+          className="style-icon-img"
+          icon={<img src={teacherIcon} alt="Teacher Icon" />}
+        >
+          <NavLink to="/admin/teachers">
+            Teachers
+          </NavLink>
         </Menu.Item>
-        <Menu.Item key="3">
-          <span className="style-icon-img pr-10">
-            <img src={teacherIcon} alt="Teacher Icon" />
-          </span>
-          <NavLink to="/admin/teachers">Teachers</NavLink>
+        <Menu.Item
+          key="4"
+          className="style-icon-img"
+          icon={<img src={studentIcon} alt="Student Icon" />}
+        >
+          <NavLink to="/admin/students">
+            Students
+          </NavLink>
         </Menu.Item>
-        <Menu.Item key="4">
-          <span className="style-icon-img pr-10">
-            <img src={studentIcon} alt="Student Icon" />
-          </span>
-          <NavLink to="/admin/students">Students</NavLink>
+        <Menu.Item
+          key="5"
+          className="style-icon-img"
+          icon={<img src={examsIcon} alt="Exams Icon" />}
+        >
+          <NavLink to="/admin/exams">
+            Exams
+          </NavLink>
         </Menu.Item>
-        <Menu.Item key="5">
-          <span className="style-icon-img pr-10">
-            <img src={examsIcon} alt="Exams Icon" />
-          </span>
-          <NavLink to="/admin/exams">Exams</NavLink>
-        </Menu.Item>
-        <Menu.Item key="6">
-          <span className="style-icon-img pr-10">
-            <img src={chartsIcon} alt="Chart Icon" />
-          </span>
-          <NavLink to="/admin/charts">Charts</NavLink>
+        <Menu.Item
+          key="6"
+          className="style-icon-img"
+          icon={<img src={chartsIcon} alt="Chart Icon" />}
+        >
+          <NavLink to="/admin/charts">
+            Charts
+          </NavLink>
         </Menu.Item>
       </Menu>
     </Sider>

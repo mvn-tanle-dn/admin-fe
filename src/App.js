@@ -14,6 +14,8 @@ import {
 import { LayoutHeader } from "./components/layouts/LayoutDefault";
 import { LayoutSider } from "./components/layouts/LayoutDefault";
 import { PageDashboard, PageCharts } from "./pages/Home";
+import PageNotFound from "./pages/PageNotFound";
+import MyProfile from "./pages/MyProFile";
 
 function App() {
   const [collapsed, setCollapsed] = useState(false);
@@ -29,9 +31,7 @@ function App() {
           <LayoutSider collapsed={collapsed} />
           <Layout className="site-layout">
             <LayoutHeader toggle={toggle} />
-            <Content className="site-layout-background layout-content"
-              style={{ margin: "24px 16px", padding: 24, minHeight: 280 }}
-            >
+            <Content className="site-layout-background layout-content">
               <Switch>
                 <Route exact path="/admin" component={PageDashboard} />
                 <Route path="/admin/accounts" component={PageAccountsManager} />
@@ -39,6 +39,8 @@ function App() {
                 <Route path="/admin/students" component={PageStudentsManager} />
                 <Route path="/admin/exams" component={PageExamsManager} />
                 <Route path="/admin/charts" component={PageCharts} />
+                <Route path="/admin/my-profile" component={MyProfile} />
+                <Route path="/admin/*" component={PageNotFound} />
               </Switch>
             </Content>
           </Layout>
