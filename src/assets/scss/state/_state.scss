@@ -1,0 +1,8 @@
+.page-title {
+    color: map-get($colors, page-title);
+    @include pxRem(font-size, 60);
+}
+.page-sub-title {
+    color: map-get($colors, page-sub-title);
+    @include pxRem(font-size, 30);
+}

@@ -15,7 +15,9 @@
     margin: 16px;
     background: rgba(255, 255, 255, 0.3);
 }
-
+.ant-tooltop-open {
+    display: none;
+}
 .site-layout .site-layout-background {
     background: #fff;
 }
@@ -29,6 +31,8 @@
     }
     .menu-title {
         @include pxRem(font-size, 25);
+        color: map-get($colors, white );
+        text-align: center;
     }
     .layout-content {
         @include pxRem(margin, 24 26);
@@ -37,8 +41,8 @@
     }
     .style-icon-img {
         img {
-            @include pxRem(width, 18);
-            @include pxRem(height, 18);
+            @include pxRem(width, 25);
+            height: auto;
         }
     }
 }
