@@ -2,7 +2,7 @@ import "./assets/scss/styles.scss";
 import "antd/dist/antd.css";
 import React, { useState } from "react";
 import { Layout } from "antd";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Login from "./pages/Login";
 import PrivateRoute from "./private-route/PrivateRoute";
 import {
@@ -34,18 +34,27 @@ function App() {
             <Content className="site-layout-background layout-content">
               <Switch>
                 <Route exact path="/admin" component={PageDashboard} />
-                <Route path="/admin/accounts" component={PageAccountsManager} />
-                <Route path="/admin/teachers" component={PageTeachersManager} />
+                <Route
+                  exact
+                  path="/admin/accounts"
+                  component={PageAccountsManager}
+                />
+                <Route
+                  exact
+                  path="/admin/teachers"
+                  component={PageTeachersManager}
+                />
                 <Route path="/admin/students" component={PageStudentsManager} />
                 <Route path="/admin/exams" component={PageExamsManager} />
                 <Route path="/admin/charts" component={PageCharts} />
                 <Route path="/admin/my-profile" component={AdminProfile} />
-                <Route path="/admin/*" component={PageNotFound} />
+                <Redirect from="*" to="/admin" />
               </Switch>
             </Content>
           </Layout>
         </Layout>
       </PrivateRoute>
+      <Route path="*" component={PageNotFound} />
     </div>
   );
 }

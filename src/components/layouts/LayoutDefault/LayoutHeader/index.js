@@ -21,7 +21,7 @@ export default function LayoutHeader(props) {
     <Menu>
       <Menu.Item key="1" icon={<UserOutlined />}>
         <span>
-          <NavLink to="/admin/my-profile">Tài khoản của tôi</NavLink>
+          <NavLink to="/admin/my-profile">Quản lý tài khoản</NavLink>
         </span>
       </Menu.Item>
       <Menu.Item key="2" icon={<LogoutOutlined />}>
