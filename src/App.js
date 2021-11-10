@@ -16,6 +16,7 @@ import { LayoutSider } from "./components/layouts/LayoutDefault";
 import { PageDashboard, PageCharts } from "./pages/Home";
 import PageNotFound from "./pages/PageNotFound";
 import AdminProfile from "./pages/AdminProfile";
+import { ProviderStudents } from "./context/students";
 
 function App() {
   const [collapsed, setCollapsed] = useState(false);
@@ -32,24 +33,30 @@ function App() {
           <Layout className="site-layout">
             <LayoutHeader toggle={toggle} />
             <Content className="site-layout-background layout-content">
-              <Switch>
-                <Route exact path="/admin" component={PageDashboard} />
-                <Route
-                  exact
-                  path="/admin/accounts"
-                  component={PageAccountsManager}
-                />
-                <Route
-                  exact
-                  path="/admin/teachers"
-                  component={PageTeachersManager}
-                />
-                <Route path="/admin/students" component={PageStudentsManager} />
-                <Route path="/admin/exams" component={PageExamsManager} />
-                <Route path="/admin/charts" component={PageCharts} />
-                <Route path="/admin/my-profile" component={AdminProfile} />
-                <Redirect from="*" to="/admin" />
-              </Switch>
+              <ProviderStudents>
+                <Switch>
+                  <Route exact path="/admin" component={PageDashboard} />
+                  <Route
+                    exact
+                    path="/admin/accounts"
+                    component={PageAccountsManager}
+                  />
+                  <Route
+                    exact
+                    path="/admin/teachers"
+                    component={PageTeachersManager}
+                  />
+
+                  <Route
+                    path="/admin/students"
+                    component={PageStudentsManager}
+                  />
+                  <Route path="/admin/exams" component={PageExamsManager} />
+                  <Route path="/admin/charts" component={PageCharts} />
+                  <Route path="/admin/my-profile" component={AdminProfile} />
+                  <Redirect from="*" to="/admin" />
+                </Switch>
+              </ProviderStudents>
             </Content>
           </Layout>
         </Layout>
