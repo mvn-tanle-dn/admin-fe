@@ -221,8 +221,8 @@ export default function PageTeachersManager() {
     } else {
       setData([
         ...data.slice(0, index),
-        Object.assign({}, data, {
-          values,
+        Object.assign({}, data[index], {
+          ...values,
         }),
         ...data.slice(index + 1),
       ]);
