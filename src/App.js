@@ -54,7 +54,7 @@ function App() {
                   <Route path="/admin/exams" component={PageExamsManager} />
                   <Route path="/admin/charts" component={PageCharts} />
                   <Route path="/admin/my-profile" component={AdminProfile} />
-                  <Redirect from="*" to="/admin" />
+                  <Redirect from="*" to="/admin/dashboard" />
                 </Switch>
               </ProviderStudents>
             </Content>
