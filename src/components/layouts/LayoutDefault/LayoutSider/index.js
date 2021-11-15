@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Layout, Menu } from "antd";
-import examsIcon from "../../../../assets/img/defaultLayout-img/exams-icon.jfif";
-import studentIcon from "../../../../assets/img/defaultLayout-img/student-icon.jpg";
-import teacherIcon from "../../../../assets/img/defaultLayout-img/teacher-icon.png";
-import accountIcon from "../../../../assets/img/defaultLayout-img/account-icon.jpg";
-import homeIcon from "../../../../assets/img/defaultLayout-img/home-icon.jpg";
-import chartsIcon from "../../../../assets/img/defaultLayout-img/charts-icon.png";
+import examsIcon from "../../../../assets/img/defaultLayout-img/exams.png";
+import studentIcon from "../../../../assets/img/defaultLayout-img/male-student.png";
+import teacherIcon from "../../../../assets/img/defaultLayout-img/teacher.png";
+import accountIcon from "../../../../assets/img/defaultLayout-img/accounts.png";
+import homeIcon from "../../../../assets/img/defaultLayout-img/dashboard.png";
+import chartsIcon from "../../../../assets/img/defaultLayout-img/bar-chart.png";
 
 const { Sider } = Layout;
 
