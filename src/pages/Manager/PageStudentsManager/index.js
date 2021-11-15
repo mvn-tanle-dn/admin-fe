@@ -304,6 +304,7 @@ export default function PageStudentsManager() {
             onCancel={handleCancelAddModal}
             footer={null}
             afterClose={() => formAdd.resetFields()}
+            forceRender
           >
             <Form form={formAdd} onFinish={addStudent}>
               <Form.Item
@@ -474,10 +475,11 @@ export default function PageStudentsManager() {
             <Divider />
           </Drawer>
           <Modal
-            title="Thêm Sinh Viên"
+            title="Chỉnh sửa sinh viên"
             visible={isEditModalVisible}
             onCancel={handleCancelEditModal}
             footer={null}
+            forceRender
           >
             <Form form={formEdit} onFinish={editStudent}>
               <Form.Item

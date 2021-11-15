@@ -131,7 +131,12 @@ export default function PageAccountsManager() {
     if (role !== null && role !== "") {
       setDataSource([
         ...dataSource,
-        { key: dataSource.length + 1, username: username, role: role },
+        {
+          key: dataSource.length + 1,
+          username: username,
+          role: role,
+          password: password,
+        },
       ]);
       setIsModalVisible(false);
       setRole(null);
