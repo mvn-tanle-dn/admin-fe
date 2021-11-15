@@ -298,6 +298,8 @@ export default function PageStudentsManager() {
               Thêm
             </Button>
           </div>
+
+          {/* Add Student Modal */}
           <Modal
             title="Thêm Sinh Viên"
             visible={isAddModalVisible}
@@ -306,7 +308,12 @@ export default function PageStudentsManager() {
             afterClose={() => formAdd.resetFields()}
             forceRender
           >
-            <Form form={formAdd} onFinish={addStudent}>
+            <Form
+              form={formAdd}
+              onFinish={addStudent}
+              labelCol={{ span: 5 }}
+              wrapperCol={{ span: 15 }}
+            >
               <Form.Item
                 label="Họ và tên"
                 name="name"
@@ -399,8 +406,12 @@ export default function PageStudentsManager() {
                   <Option key="2020">2020</Option>
                 </Select>
               </Form.Item>
-              <Form.Item>
-                <Button type="primary" htmlType="submit">
+              <Form.Item style={{ marginLeft: 30 }}>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  style={{ marginRight: 15 }}
+                >
                   Đồng ý
                 </Button>
                 <Button htmlType="button" onClick={handleCancelAddModal}>
@@ -409,6 +420,8 @@ export default function PageStudentsManager() {
               </Form.Item>
             </Form>
           </Modal>
+
+          {/* View Detail Student Drawer */}
           <Drawer
             width={640}
             placement="right"
@@ -422,6 +435,7 @@ export default function PageStudentsManager() {
             >
               -- Thông tin sinh viên --
             </p>
+            <Divider />
             <Row>
               <Col span={12}>
                 <DescriptionItem
@@ -474,6 +488,8 @@ export default function PageStudentsManager() {
             </Row>
             <Divider />
           </Drawer>
+
+          {/* Edit Student Modal */}
           <Modal
             title="Chỉnh sửa sinh viên"
             visible={isEditModalVisible}
@@ -481,7 +497,12 @@ export default function PageStudentsManager() {
             footer={null}
             forceRender
           >
-            <Form form={formEdit} onFinish={editStudent}>
+            <Form
+              form={formEdit}
+              onFinish={editStudent}
+              labelCol={{ span: 5 }}
+              wrapperCol={{ span: 15 }}
+            >
               <Form.Item
                 label="Họ và tên"
                 name="name"
@@ -574,9 +595,13 @@ export default function PageStudentsManager() {
                   <Option key="2020">2020</Option>
                 </Select>
               </Form.Item>
-              <Form.Item>
-                <Button type="primary" htmlType="submit">
-                  Đồng ý
+              <Form.Item style={{ marginLeft: 30 }}>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  style={{ marginRight: 15 }}
+                >
+                  Cập nhật
                 </Button>
                 <Button htmlType="button" onClick={handleCancelAddModal}>
                   Huỷ

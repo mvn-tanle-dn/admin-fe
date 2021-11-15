@@ -233,7 +233,16 @@ export default function PageAccountsManager() {
           >
             <Input.Password />
           </Form.Item>
-          <Form.Item label="Đối tượng">
+          <Form.Item
+            label="Đối tượng"
+            name="role"
+            rules={[
+              {
+                required: true,
+                message: "Vui lòng chọn đối tượng!",
+              },
+            ]}
+          >
             <Select onChange={handleSelected} value={role}>
               <Select.Option value="Giảng Viên">Giảng Viên</Select.Option>
               <Select.Option value="Sinh Viên">Sinh Viên</Select.Option>

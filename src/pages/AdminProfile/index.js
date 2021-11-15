@@ -24,7 +24,6 @@ export default function AdminProfile() {
   };
   return (
     <Card title="Thông tin tài khoản" style={{ width: 1000 }}>
-      <p>Role: Admin</p>
       <Form
         form={form}
         name="basic"
@@ -77,12 +76,7 @@ export default function AdminProfile() {
         >
           <Input.Password />
         </Form.Item>
-        <Form.Item
-          wrapperCol={{
-            offset: 8,
-            span: 16,
-          }}
-        >
+        <Form.Item style={{ marginLeft: 156 }}>
           <Button type="primary" htmlType="submit">
             Đổi mật khẩu
           </Button>

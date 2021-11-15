@@ -466,6 +466,8 @@ export default function PageTeachersManager() {
           form={formAdd}
           initialValues={{ layout: formLayout }}
           onValuesChange={onFormLayoutChange}
+          labelCol={{ span: 6 }}
+          wrapperCol={{ span: 14 }}
         >
           <Form.Item
             label="ID"
@@ -522,15 +524,20 @@ export default function PageTeachersManager() {
               ))}
             </Select>
           </Form.Item>
-          <FormItem label="Môn giảng dạy" required>
+          <Form.Item label="Môn giảng dạy" required>
             <Select value={secondSubjects} onChange={onSecondSubjectChange}>
               {subjects.map((subject) => (
                 <Option key={subject}>{subject}</Option>
               ))}
             </Select>
-          </FormItem>
-          <FormItem>
-            <Button type="primary" htmlType="submit" onClick={addTeacher}>
+          </Form.Item>
+          <Form.Item style={{ marginLeft: 30 }}>
+            <Button
+              type="primary"
+              htmlType="submit"
+              onClick={addTeacher}
+              style={{ marginRight: 15 }}
+            >
               Đồng ý
             </Button>
             <Button
@@ -539,7 +546,7 @@ export default function PageTeachersManager() {
             >
               Huỷ
             </Button>
-          </FormItem>
+          </Form.Item>
         </Form>
       </Modal>
     </Card>
