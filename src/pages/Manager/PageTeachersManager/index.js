@@ -20,7 +20,6 @@ import {
   CheckCircleOutlined,
 } from "@ant-design/icons";
 import AddIcon from "../../../assets/img/add.png";
-import FormItem from "antd/lib/form/FormItem";
 
 const { Option } = Select;
 const { Search } = Input;
@@ -325,7 +324,6 @@ export default function PageTeachersManager() {
           </Button>
         </div>
       }
-      style={{ width: 1130 }}
     >
       <List
         itemLayout="horizontal"

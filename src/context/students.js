@@ -102,7 +102,7 @@ export function ProviderStudents({ children }) {
       phone: "0777456987",
       department: "Tự động hoá",
       schoolYear: "2017",
-      gpa: 8.5,
+      gpa: 8.1,
     },
     {
       key: "20175",
@@ -112,7 +112,7 @@ export function ProviderStudents({ children }) {
       phone: "0972456987",
       department: "CNTT",
       schoolYear: "2017",
-      gpa: 9.2,
+      gpa: 5.2,
     },
     {
       key: "20176",
@@ -162,7 +162,7 @@ export function ProviderStudents({ children }) {
       phone: "0933456987",
       department: "CNTT",
       schoolYear: "2016",
-      gpa: 9.3,
+      gpa: 7.3,
     },
     {
       key: "20162",
@@ -182,7 +182,7 @@ export function ProviderStudents({ children }) {
       phone: "0777456987",
       department: "CNTT",
       schoolYear: "2016",
-      gpa: 9.2,
+      gpa: 8.2,
     },
     {
       key: "20164",
@@ -262,7 +262,7 @@ export function ProviderStudents({ children }) {
       phone: "0947459873",
       department: "CNTT",
       schoolYear: "2015",
-      gpa: 9.5,
+      gpa: 8.1,
     },
     {
       key: "20153",
@@ -322,7 +322,7 @@ export function ProviderStudents({ children }) {
       phone: "0988321444",
       department: "Kinh tế",
       schoolYear: "2015",
-      gpa: 8.9,
+      gpa: 8.2,
     },
   ]);
 
