@@ -19,12 +19,12 @@ export default function LayoutHeader(props) {
   };
   const menu = (
     <Menu>
-      <Menu.Item key="1" icon={<UserOutlined />}>
+      <Menu.Item key="7" icon={<UserOutlined />}>
         <span>
           <NavLink to="/admin/my-profile">Quản lý tài khoản</NavLink>
         </span>
       </Menu.Item>
-      <Menu.Item key="2" icon={<LogoutOutlined />}>
+      <Menu.Item key="8" icon={<LogoutOutlined />}>
         <span onClick={loggout}>Đăng xuất</span>
       </Menu.Item>
     </Menu>

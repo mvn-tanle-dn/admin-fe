@@ -26,42 +26,44 @@ function App() {
   const { Content } = Layout;
   return (
     <div className="App">
-      <Route exact path="/" component={Login} />
-      <PrivateRoute path="/admin">
-        <Layout className="layout-default">
-          <LayoutSider collapsed={collapsed} />
-          <Layout className="site-layout">
-            <LayoutHeader toggle={toggle} />
-            <Content className="site-layout-background layout-content">
-              <ProviderStudents>
-                <Switch>
-                  <Route exact path="/admin" component={PageDashboard} />
-                  <Route
-                    exact
-                    path="/admin/accounts"
-                    component={PageAccountsManager}
-                  />
-                  <Route
-                    exact
-                    path="/admin/teachers"
-                    component={PageTeachersManager}
-                  />
+      <Switch>
+        <Route exact path="/" component={Login} />
+        <PrivateRoute path="/admin">
+          <Layout className="layout-default">
+            <LayoutSider collapsed={collapsed} />
+            <Layout className="site-layout">
+              <LayoutHeader toggle={toggle} />
+              <Content className="site-layout-background layout-content">
+                <ProviderStudents>
+                  <Switch>
+                    <Route exact path="/admin" component={PageDashboard} />
+                    <Route
+                      exact
+                      path="/admin/accounts"
+                      component={PageAccountsManager}
+                    />
+                    <Route
+                      exact
+                      path="/admin/teachers"
+                      component={PageTeachersManager}
+                    />
 
-                  <Route
-                    path="/admin/students"
-                    component={PageStudentsManager}
-                  />
-                  <Route path="/admin/exams" component={PageExamsManager} />
-                  <Route path="/admin/charts" component={PageCharts} />
-                  <Route path="/admin/my-profile" component={AdminProfile} />
-                  <Route path="/admin/*" component={PageNotFound} />
-                </Switch>
-              </ProviderStudents>
-            </Content>
+                    <Route
+                      path="/admin/students"
+                      component={PageStudentsManager}
+                    />
+                    <Route path="/admin/exams" component={PageExamsManager} />
+                    <Route path="/admin/charts" component={PageCharts} />
+                    <Route path="*/admin/my-profile" component={AdminProfile} />
+                    <Route path="/admin/*" component={PageNotFound} />
+                  </Switch>
+                </ProviderStudents>
+              </Content>
+            </Layout>
           </Layout>
-        </Layout>
-      </PrivateRoute>
-      <Route path="*" component={PageNotFound} />
+        </PrivateRoute>
+        <Route path="/*" component={PageNotFound} />
+      </Switch>
     </div>
   );
 }

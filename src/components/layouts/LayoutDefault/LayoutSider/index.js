@@ -17,6 +17,7 @@ const paths = [
   { key: "4", label: "Students", path: "/admin/students" },
   { key: "5", label: "Exams", path: "/admin/exams" },
   { key: "6", label: "Charts", path: "/admin/charts" },
+  { key: "7", label: "Charts", path: "/admin/my-profile" },
 ];
 
 export default function LayoutSider(props) {
@@ -28,6 +29,7 @@ export default function LayoutSider(props) {
 
   useEffect(() => {
     let pathSelected = paths.find((_item) => _item.path === location.pathname);
+    console.log(pathSelected + "hahah");
     setSelectedKey(pathSelected.key);
   }, [location]);
   return (
