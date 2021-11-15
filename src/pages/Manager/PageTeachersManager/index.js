@@ -12,6 +12,7 @@ import {
   notification,
   Select,
   message,
+  Divider,
 } from "antd";
 import ViewDetailIcon from "../../../assets/img/viewdetails.png";
 import {
@@ -376,10 +377,11 @@ export default function PageTeachersManager() {
         footer={null}
       >
         <Image
-          style={{ height: 200, alignContent: "center" }}
+          style={{ height: 180, alignContent: "center", marginLeft: "50%" }}
           src="https://joeschmoe.io/api/v1/random"
           preview={false}
         />
+        <Divider />
         <Form
           ref={detailFormRef}
           {...formItemLayout}
@@ -407,7 +409,7 @@ export default function PageTeachersManager() {
           <Form.Item label="Môn giảng dạy" name="subjects">
             <Input disabled={lock} />
           </Form.Item>
-          <Form.Item {...buttonItemLayout}>
+          <Form.Item {...buttonItemLayout} style={{ marginLeft: 60 }}>
             <Button
               type="primary"
               htmlType="submit"
@@ -418,7 +420,7 @@ export default function PageTeachersManager() {
             <Button
               htmlType="button"
               onClick={handleCancel}
-              style={lock ? { display: "none" } : null}
+              style={lock ? { display: "none" } : { marginLeft: 15 }}
             >
               Huỷ
             </Button>
@@ -440,7 +442,7 @@ export default function PageTeachersManager() {
                 type="primary"
                 htmlType="button"
                 danger
-                style={!lock ? { display: "none" } : null}
+                style={!lock ? { display: "none" } : { marginLeft: 15 }}
               >
                 Xoá
               </Button>
