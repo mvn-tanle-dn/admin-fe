@@ -1,0 +1,15 @@
+.ant-table-thead>tr>th {
+  padding: 12px 12px;
+}
+
+.ant-table-tbody>tr>td {
+  padding: 12px 12px;
+}
+
+.ant-list-item {
+  padding: 4px 0;
+}
+
+.ant-list-item p {
+  padding-bottom: 0;
+}

@@ -1,5 +1,5 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { Layout, Menu } from "antd";
 import examsIcon from "../../../../assets/img/defaultLayout-img/exams-icon.jfif";
 import studentIcon from "../../../../assets/img/defaultLayout-img/student-icon.jpg";
@@ -9,12 +9,37 @@ import homeIcon from "../../../../assets/img/defaultLayout-img/home-icon.jpg";
 import chartsIcon from "../../../../assets/img/defaultLayout-img/charts-icon.png";
 
 const { Sider } = Layout;
+
+const paths = [
+  { key: "1", label: "Dashboard", path: "/admin" },
+  { key: "2", label: "Accounts", path: "/admin/accounts" },
+  { key: "3", label: "Teachers", path: "/admin/teachers" },
+  { key: "4", label: "Students", path: "/admin/students" },
+  { key: "5", label: "Exams", path: "/admin/exams" },
+  { key: "6", label: "Charts", path: "/admin/charts" },
+];
+
 export default function LayoutSider(props) {
+  const location = useLocation();
+
+  const [selectedKey, setSelectedKey] = useState(
+    paths.find((_item) => location.pathname === _item.path).key
+  );
+
+  useEffect(() => {
+    let pathSelected = paths.find((_item) => _item.path === location.pathname);
+    setSelectedKey(pathSelected.key);
+  }, [location]);
   return (
     <Sider trigger={null} collapsible collapsed={props.collapsed}>
       <div className="logo" />
       <h3 className="menu-title mt-10">Admin Page</h3>
-      <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
+      <Menu
+        theme="dark"
+        mode="inline"
+        selectedKeys={selectedKey}
+        // onClick={(path) => console.log(path.key)}
+      >
         <Menu.Item
           key="1"
           className="style-icon-img"

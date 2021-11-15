@@ -181,7 +181,7 @@ export default function PageTeachersManager() {
     let newEducation = addFormRef.current.getFieldValue("new_education");
 
     if (newId && newName && newEducation) {
-      let checkId = data.findIndex((item) => item.id === newId);
+      let checkId = data.findIndex((_item) => _item.id === newId);
       if (checkId !== -1) {
         message.error("ID này đã tồn tại trong hệ thống");
       } else {
@@ -211,7 +211,7 @@ export default function PageTeachersManager() {
 
   // Edit teacher
   const updateItem = (id, values) => {
-    let index = data.findIndex((item) => item.id === id);
+    let index = data.findIndex((_item) => _item.id === id);
     if (index === -1) {
       notification.open({
         message: "Cập nhật không thành công!",
@@ -240,7 +240,7 @@ export default function PageTeachersManager() {
 
   // Delete teacher
   const confirmDelete = () => {
-    let index = data.findIndex((item) => item.id === currenItem.id);
+    let index = data.findIndex((_item) => _item.id === currenItem.id);
 
     if (index === -1) {
       notification.open({
@@ -307,8 +307,10 @@ export default function PageTeachersManager() {
               if (value === "") {
                 setData(teachers);
               } else {
-                let dataSearch = teachers.filter((item) =>
-                  item.name.toLowerCase().includes(value.trim().toLowerCase())
+                let dataSearch = teachers.filter((_teacher) =>
+                  _teacher.name
+                    .toLowerCase()
+                    .includes(value.trim().toLowerCase())
                 );
                 setData([...dataSearch]);
               }

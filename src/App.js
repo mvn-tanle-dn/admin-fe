@@ -2,7 +2,7 @@ import "./assets/scss/styles.scss";
 import "antd/dist/antd.css";
 import React, { useState } from "react";
 import { Layout } from "antd";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Login from "./pages/Login";
 import PrivateRoute from "./private-route/PrivateRoute";
 import {
@@ -54,7 +54,7 @@ function App() {
                   <Route path="/admin/exams" component={PageExamsManager} />
                   <Route path="/admin/charts" component={PageCharts} />
                   <Route path="/admin/my-profile" component={AdminProfile} />
-                  <Redirect from="*" to="/admin/dashboard" />
+                  <Route path="/admin/*" component={PageNotFound} />
                 </Switch>
               </ProviderStudents>
             </Content>

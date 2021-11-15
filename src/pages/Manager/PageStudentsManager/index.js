@@ -135,7 +135,9 @@ export default function PageStudentsManager() {
               onClick={() => {
                 setIsEditModalVisible(true);
                 setStudentKeyEdit(key);
-                let studentEdit = dataSource.filter((item) => item.key === key);
+                let studentEdit = dataSource.filter(
+                  (_item) => _item.key === key
+                );
                 setStudentEditCurrent(studentEdit[0]);
               }}
               src={EditImg}
@@ -194,7 +196,7 @@ export default function PageStudentsManager() {
 
   const editStudent = (value) => {
     let studentEditIndex = dataSource.findIndex(
-      (item) => item.key === studentKeyEdit
+      (_item) => _item.key === studentKeyEdit
     );
 
     if (studentEditIndex !== -1) {
@@ -230,7 +232,7 @@ export default function PageStudentsManager() {
   const [studentInfo, setStudentInfo] = useState({});
 
   const showDrawer = (key) => {
-    let indexStudent = dataSource.findIndex((item) => item.key === key);
+    let indexStudent = dataSource.findIndex((_item) => _item.key === key);
     setStudentInfo(dataSource[indexStudent]);
     setViewDetailVisible(true);
   };
@@ -248,7 +250,7 @@ export default function PageStudentsManager() {
 
   // Delete Student
   const deleteStudent = (key) => {
-    let indexStudent = dataSource.findIndex((item) => item.key === key);
+    let indexStudent = dataSource.findIndex((_item) => _item.key === key);
     let temp = dataSource[indexStudent];
     if (indexStudent !== -1) {
       setDataSource([
